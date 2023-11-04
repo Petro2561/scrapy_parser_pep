@@ -6,12 +6,10 @@ RESULTS_DIR = "results"
 DATETIME_FORMAT = "%Y-%m-%d_%H-%M-%S"
 STATUS_SUMMARY_NAME = "status_summary"
 PEP_SPIDER_URL = "peps.python.org"
-PEPS_SPIDER_PATH = "pep_parse.spiders"
 
 BOT_NAME = "pep_parse"
 
-SPIDER_MODULES = [PEPS_SPIDER_PATH]
-NEWSPIDER_MODULE = PEPS_SPIDER_PATH
+SPIDER_MODULES = ["pep_parse.spiders"]
 
 ROBOTSTXT_OBEY = True
 
