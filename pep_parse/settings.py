@@ -9,7 +9,7 @@ STATUS_SUMMARY_NAME = "status_summary"
 BOT_NAME = "pep_parse"
 
 SPIDER_MODULES = ["pep_parse.spiders"]
-NEWSPIDER_MODULE = SPIDER_MODULES
+NEWSPIDER_MODULE = ''.join(SPIDER_MODULES)
 
 ROBOTSTXT_OBEY = True
 
