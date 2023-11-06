@@ -5,8 +5,8 @@ from pep_parse.items import PepParseItem
 
 class PepSpider(scrapy.Spider):
     name = 'pep'
-    allowed_domains = ["peps.python.org/"]
-    start_urls = [f'https://{url}' for url in allowed_domains]
+    allowed_domains = ['peps.python.org/']
+    start_domains = [f'https://{url}' for url in allowed_domains]
 
     def parse(self, response):
         for link in response.css(
@@ -18,6 +18,6 @@ class PepSpider(scrapy.Spider):
         info = response.css('h1.page-title::text').get().split()
         yield PepParseItem(
             number=info[1],
-            name="".join(info[3:]),
+            name=''.join(info[3:]),
             status=response.css('dt:contains("Status")+dd abbr::text').get(),
         )
